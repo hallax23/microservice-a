@@ -22,6 +22,9 @@ To do this, simply add this to the end of your main program:
 message = socket.recv()
 The message will be "JSON exported successfully.", and as I said you don't need to do anything with the message unless you'd like to. The bulk on information is being put onto the txt file.
 
+![image](https://github.com/user-attachments/assets/7fd62934-39c4-4f97-b3d4-346851b5ff9a)
+
+
 [Uploading uml.drawio…]()<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/133.0.0.0 Safari/537.36" version="26.0.11">
   <diagram name="Page-1" id="K5HNMTfDOryTdzJ6RLa1">
     <mxGraphModel dx="1257" dy="528" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
