@@ -14,22 +14,34 @@ def printBlankSpaces(item_name, txt_file, spaces = 15):
     for _ in range(space_length):
         txt_file.write (' ')
 
-def printListHeader(list_name, txt_file):
+def printListHeader(list_name, txt_file, spaces):
     """ Prints the List Name and Table Header to the given text file"""
     txt_file.write('\n')
     txt_file.write (list_name)
     txt_file.write ('\n\n')
     txt_file.write ('Item')
-    printBlankSpaces('Item', txt_file)
+    printBlankSpaces('Item', txt_file, spaces)
     txt_file.write('Quantity')
     printBlankSpaces('Quantity', txt_file)
     txt_file.write('Priority\n')
 
-def printList(list_data, txt_file):
+def getLongestItemNameLength(list_data):
+    """ Iterates through a list to find an item name with 15 or more characters"""
+    characters = 15
+    for item in list_data:
+        name_length = len(item['item'])
+        if characters <= name_length:
+            characters = name_length + 1
+    return characters
+
+
+def printList(list_data, list_name, txt_file):
     """ Prints all the items in the list by  their name, quantity and priority values to the given text file"""
+    spaces = getLongestItemNameLength(list_data)
+    printListHeader(list_name, txt_file, spaces)
     for item in list_data:
         txt_file.write (item['item'])
-        printBlankSpaces(item['item'], txt_file)
+        printBlankSpaces(item['item'], txt_file, spaces)
 
         txt_file.write (item['quantity'])
         printBlankSpaces(item['quantity'], txt_file)
@@ -73,16 +85,14 @@ def main():
                 
                 # if they find the list, write it to txt
                 list_found = True
-                printListHeader(list_name, txt_file)
-                printList(data[list], txt_file)
+                printList(data[list], list_name, txt_file)
                 break
                 
         if list_found is False:
             
             # if list name wasnt found, prints out all lists
             for list in data:
-                #print name of list
-                printListHeader(list, txt_file)          
+                #print name of list      
                 printList(data[list], txt_file)
                     
         txt_file.close()
