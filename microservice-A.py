@@ -74,7 +74,7 @@ def main():
         data = json.load(json_file)
         
         # open txt file
-        txt_file = open('list_export.txt', 'w')
+        txt_file = open(f'./text_files/{list_name}.txt', 'w')
         
         list_found = False
         
