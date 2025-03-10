@@ -20,7 +20,7 @@ The lists are printed out to a txt file, of which is in the same directory that 
 While nothing has to be done on your end to make this happen, zeromq needs the client side (main program) to recieve data back after requesting it, even though it won't be used.
 To do this, simply add this to the end of your main program:
 message = socket.recv()
-The message will be "JSON exported successfully.", and as I said you don't need to do anything with the message unless you'd like to. The bulk on information is being put onto the txt file.
+The message will be a string "JSON exported successfully.", and as I said you don't need to do anything with the message unless you'd like to. The bulk on information is being put onto the txt file, which will be formatted in an organized way. 
 
 ![image](https://github.com/user-attachments/assets/7fd62934-39c4-4f97-b3d4-346851b5ff9a)
 
